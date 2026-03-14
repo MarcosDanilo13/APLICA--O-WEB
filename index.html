@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Clientes | CrudCrud</title>
+    <!-- Include Inter font for modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Gestão de Clientes</h1>
+            <p>Cadastre, visualize e gerencie seus clientes facilmente usando a API do CrudCrud.</p>
+        </header>
+
+        <section class="form-section glass-panel">
+            <h2>Novo Cliente</h2>
+            <form id="client-form">
+                <div class="input-group">
+                    <label for="name">Nome Completo</label>
+                    <input type="text" id="name" placeholder="Ex: João da Silva" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" placeholder="Ex: joao@email.com" required>
+                </div>
+
+
+
+                <button type="submit" class="btn-primary" id="submit-btn">
+                    <span class="btn-text">Cadastrar Cliente</span>
+                    <span class="loader hidden"></span>
+                </button>
+            </form>
+        </section>
+
+        <section class="list-section">
+            <div class="list-header">
+                <h2>Clientes Cadastrados</h2>
+                <button id="refresh-btn" class="btn-icon" title="Atualizar Lista">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.59-9.21l5.67-5.67" />
+                    </svg>
+                </button>
+            </div>
+
+            <div id="loading-indicator" class="hidden">
+                <span class="loader-dark"></span> Carregando clientes...
+            </div>
+
+            <div id="error-message" class="hidden error-msg"></div>
+
+            <div class="clients-grid" id="clients-list">
+                <!-- Os clientes serão renderizados aqui dinamicamente -->
+            </div>
+        </section>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+<footer>
+        Marcos Danilo &#169 2026
+    </footer>
+
+</html>
